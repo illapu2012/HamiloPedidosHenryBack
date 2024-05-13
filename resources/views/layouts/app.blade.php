@@ -119,10 +119,18 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ url('/pedidos') }}" class="nav-link {{ (request()->is('pedidos*')) ? 'active' : '' }}">
+                                    <a href="{{ url('/pedidos/registrar') }}" class="nav-link {{ (request()->is('pedidos/registrar*')) ? 'active' : '' }}">
                                         <i class="nav-icon fas fa-shopping-cart"></i>
                                         <p>
                                             Pedidos
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('/pedidos') }}" class="nav-link {{ (request()->is('pedidos*')) ? 'active' : '' }}">
+                                        <i class="nav-icon fas fa-list"></i>
+                                        <p>
+                                            Listar Pedidos
                                         </p>
                                     </a>
                                 </li>

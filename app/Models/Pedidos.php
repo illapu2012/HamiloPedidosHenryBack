@@ -26,9 +26,9 @@ class Pedidos extends Model
     }
 
     public function negocio(){
-       return $this->belongsTo(Negocio::class, 'negocio_id');
+       return $this->belongsTo(Negocios::class, 'negocio_id');
     }
     public function detalles(){
-       return $this->hasMany(PedidosDetalle::class, 'pedido_id');
+       return $this->hasMany(PedidosDetalle::class, 'pedidos_id');
     }
 }

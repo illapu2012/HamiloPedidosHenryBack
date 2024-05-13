@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\NegociosController;
 use App\Http\Controllers\ProductosController;
 
@@ -21,10 +22,8 @@ Route::get('/', function () {
 });
 
 // VERIFICACION DE RUTAS
-
+Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
-
-    Auth::routes();
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('/verificar', [App\Http\Controllers\HomeController::class, 'verificar'])->name('verificarOTP');
@@ -50,7 +49,11 @@ Route::group(['middleware' => ['auth']], function () {
     //RUTAS PARA PEDIDOS
 
     Route::get('/pedidos', [App\Http\Controllers\PedidosController::class, 'index']);
-
+    Route::get('/pedidos/registrar', [App\Http\Controllers\PedidosController::class, 'create']);
+    Route::put('/pedidos/estado/{id}', [PedidosController::class, 'cambiarEstado']);
+    Route::get('/pedidos/ver/{id}', [App\Http\Controllers\PedidosController::class, 'show']);
 });
+
+
 
 

@@ -46,7 +46,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="costo">Costo</label>
-                                <input type="number" name="costo" class="form-control">
+                                <input type="number" step='any' name="costo" class="form-control">
                                 @error('costo') <small class="text-danger">{{ $message }}</small> @enderror
                             </div>
                             <div class="form-group">

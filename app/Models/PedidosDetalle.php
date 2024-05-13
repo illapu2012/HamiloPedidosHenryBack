@@ -12,16 +12,16 @@ class PedidosDetalle extends Model
     protected $table = 'pedidos_detalles';
 
     protected $fillable = [
-        'pedido_id',
+        'pedidos_id',
         'producto_id',
         'cantidad',
         'costo',
     ];
 
     public function pedido(){
-        return $this->belongTo(Pedidos::class, 'pedido_id');
+        return $this->belongsTo(Pedidos::class, 'pedidos_id');
     }
     public function producto(){
-        return $this->belongTo(Productos::class, 'producto_id');
+        return $this->belongsTo(Productos::class, 'producto_id');
     }
 }
