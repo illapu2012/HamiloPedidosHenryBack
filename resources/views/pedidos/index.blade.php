@@ -54,9 +54,11 @@
                                     <td>
                                         @if ($item->estado == 'Entregado')
                                             <span class="badge badge-success">Entregado</span>
+                                        @elseif ($item->estado == 'Enviado')
+                                            <span class="badge badge-warning">Enviado</span>
                                         @else
                                             <span class="badge badge-danger">Pendiente</span>
-                                        @endif
+                                    @endif
                                     </td>
                                     <td>
                                         <a href="{{ url('/pedidos/ver/'.$item->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>

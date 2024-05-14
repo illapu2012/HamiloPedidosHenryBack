@@ -84,7 +84,6 @@
                                                 @endif
                                             </td>
                                             <td>
-
                                                 <a href="{{ url('/productos/actualizar/'.$item->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                                 @if ($item->estado == true)
                                                     <a href="{{ url('/productos/estado/'.$item->id) }}" class="btn btn-danger btn-sm"><i class="fa fa-ban"></i></a>
